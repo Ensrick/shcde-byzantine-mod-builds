@@ -3,16 +3,39 @@
 Test builds of a fan mod that adds Byzantine units to Stronghold Crusader: Definitive Edition.
 This repository only holds the builds; the mod's source code is not published here.
 
-**v0.1.0-dev.1 is an early development build for volunteer testers. Nothing in it has been
+**v0.1.0-dev.2 is an early development build for volunteer testers. Nothing in it has been
 confirmed to work in game yet.** Please test on disposable maps, and back up any map or save you
 care about first.
+
+## Changes in v0.1.0-dev.2
+
+New since v0.1.0-dev.1:
+
+- New weapons, armour and helmets for six units, most of them models by other artists (see the
+  credits file):
+  - Varangian: a steel helmet, toned-down lamellar, and new axes and a round shield for the Danish
+    axe and one-hand axe loadouts. The sword-and-shield Varangian keeps his earlier look until the
+    new sword's licence is confirmed.
+  - Cataphract: a face-mask helmet with a plume, long lamellar horse barding, a triangular pennon
+    on the lance and an ornate mace for the mace riders.
+  - Vanguard: sulitsa javelins, an arming sword, a kite shield and a steel helmet; his throw now
+    starts from the ready hold.
+  - Sentinel: a recurve bow with arrows and a quiver, a hand axe for melee and a steel helmet. He
+    stows the bow while he digs or climbs a ladder.
+  - Icon Bearer and Fire Siphoner: polished brass helmets and softer brass coats.
+- Team colour: the Cataphract's plume and pennon and the Vanguard's shield now show their owner's
+  colour.
+- Border Rider: a shadow under the horse, and four horse colours.
+- Varangians speak with their own recorded voice lines instead of the Swordsman's.
+- The unit pictures on the Byzantine tab show the new gear too, apart from the sword-and-shield
+  Varangian's.
 
 ## What is in this build
 
 | Folder in the zip | Version | What it adds |
 |---|---|---|
-| `BepInEx\plugins\ByzantineUnits` | 0.1.10 | A Byzantine troop tab in the Map Editor, and the art for the Vanguard, Sentinel, Fire Siphoner, Cataphract, Icon Bearer and Varangian (three weapon loadouts) |
-| `BepInEx\plugins\ByzantinePreview` | 0.1.7 | The art for the Hoplite and the Border Rider, and the Hoplite's voice lines |
+| `BepInEx\plugins\ByzantineUnits` | 0.1.20 | A Byzantine troop tab in the Map Editor, and the art for the Vanguard, Sentinel, Fire Siphoner, Cataphract, Icon Bearer and Varangian (three weapon loadouts) |
+| `BepInEx\plugins\ByzantinePreview` | 0.1.8 | The art for the Hoplite and the Border Rider, and the Hoplite's voice lines |
 
 Each Byzantine unit runs on a stock unit. It moves, fights and costs exactly what that stock unit
 does, but looks different. Only units placed with the Byzantine buttons change; every other unit
@@ -48,15 +71,15 @@ If you already play other Script Extender mods, you probably have both.
 1. Close the game.
 2. Find the game folder: in Steam, right-click Stronghold Crusader: Definitive Edition, then choose
    Manage, then Browse local files.
-3. Extract `shcde-byzantine-mod-dev-v0.1.0-dev.1.zip` into that folder, so that the `BepInEx` folder in the zip merges with the
+3. Extract `shcde-byzantine-mod-dev-v0.1.0-dev.2.zip` into that folder, so that the `BepInEx` folder in the zip merges with the
    game's own `BepInEx` folder. Windows' "Extract All" suggests a new subfolder; change the
    destination to the game folder itself.
 4. Check that these two files now exist in the game folder:
    - `BepInEx\plugins\ByzantineUnits\ByzantineUnits.dll`
    - `BepInEx\plugins\ByzantinePreview\ByzantinePreview.dll`
 5. Start the game. The file `BepInEx\LogOutput.log` in the game folder should contain
-   `Byzantine units 0.1.10 waiting for the Script Extender` and
-   `Byzantine animation preview 0.1.7 waiting for the Script Extender`.
+   `Byzantine units 0.1.20 waiting for the Script Extender` and
+   `Byzantine animation preview 0.1.8 waiting for the Script Extender`.
 
 The zip also places this file, `Byzantine-mod-README.md`, and `Byzantine-mod-CREDITS.md` in the game folder.
 
@@ -77,10 +100,10 @@ The zip also places this file, `Byzantine-mod-README.md`, and `Byzantine-mod-CRE
 7. Play the map and give the Byzantine units orders: walk, run, fight, use ladders and dig moats
    where the stock unit can, and let some die. Check that every animation shows the Byzantine art,
    faces the right way, and has no flicker or stock frames mixed in.
-8. Hoplites: listen for their new voice lines when you select them and give orders. Stock Pikemen
-   keep their normal voices.
-9. Cataphracts come in four horse colours (bay, black, iron grey and chestnut). Every four
-   Cataphracts a player gets use each colour once, in a shuffled order.
+8. Hoplites and Varangians: listen for their new voice lines when you select them and give orders.
+   Stock Pikemen and Swordsmen keep their normal voices.
+9. Cataphracts and Border Riders come in four horse colours (bay, black, iron grey and chestnut).
+   For each of the two units, every four a player gets use each colour once, in a shuffled order.
 10. Idle Hoplites should look to the right and then to the left (their alert idle).
 
 A small separate panel on the troop tabs has a **Cheer** button. It is a development tool: for a
@@ -98,12 +121,10 @@ their victory animation, so that art can be checked.
   report it.
 - The new tab's position and look have not been checked against the real game screen, at any
   resolution.
-- The Vanguard, Sentinel, Fire Siphoner, Cataphract, Icon Bearer and Varangian show no team
-  colour yet, so it is hard to tell whose they are. The Hoplite and Border Rider have team colour.
-- Only the Hoplite has its own voice; the other units still use their stock unit's voice. The
-  Hoplite has no victory line, and its ladder lines are unverified.
-- Multiplayer is untested; please test in single player only. The Hoplite voices are switched off
-  in multiplayer.
+- Fire Siphoner, Icon Bearer, Sentinel and Varangian show no team colour yet, so it is hard to tell whose they are. Border Rider, Cataphract, Hoplite and Vanguard have team colour.
+- Only the Hoplite and the Varangian have their own voices; the other units still use their stock
+  unit's voice. Neither has a victory line yet, and the Hoplite's ladder lines are unverified.
+- Multiplayer is untested; please test in single player only. The Hoplite and Varangian voices are switched off in multiplayer.
 - These log lines are expected in this build: `Optional spear impacts unavailable; native combat
   sounds remain` and `Imperial Garrison add-on is absent`.
 - Maps and saves made with this build should still open without it, with the placed units shown
@@ -123,7 +144,7 @@ their victory animation, so that art can be checked.
 
 Open an issue at https://github.com/Ensrick/shcde-byzantine-mod-builds/issues. Please include:
 
-- the build (v0.1.0-dev.1) and what you did, step by step;
+- the build (v0.1.0-dev.2) and what you did, step by step;
 - what you expected, and what happened instead;
 - a screenshot, if it is something you can see;
 - the file `BepInEx\LogOutput.log` from the game folder, from the session where it happened. It
@@ -133,8 +154,8 @@ Open an issue at https://github.com/Ensrick/shcde-byzantine-mod-builds/issues. P
 
 - Mod by Ensrick.
 - The base characters, animations and horse come from free CC0 packs by Quaternius
-  (quaternius.com). The full list is in `Byzantine-mod-CREDITS.md` in the download, and in `CREDITS.md`
-  in this repository.
+  (quaternius.com), and some weapons and shields from models by other artists. The full list, with licences and our changes, is in
+  `Byzantine-mod-CREDITS.md` in the download, and in `CREDITS.md` in this repository.
 - The Hoplite voice lines were made with ElevenLabs.
 
 This is an unofficial fan mod. It contains no game files, and it is not made or endorsed by
